@@ -25,14 +25,17 @@ public class Pelanggan extends Orang {
         return super.getNama();
     }
 
-    public void setName(String nama) {
-       super.setNama(nama);
+    @Override
+    public void setNama(String nama) {
+        super.setNama(nama);
     }
     
+    @Override
     public String getAlamat() {
         return super.getAlamat();
     }
 
+    @Override
     public void setAlamat(String alamat) {
         super.setAlamat(alamat);
     }
