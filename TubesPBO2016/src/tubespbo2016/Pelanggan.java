@@ -10,13 +10,19 @@ package tubespbo2016;
  * @author Budi Pradnyana
  */
 public class Pelanggan extends Orang {
-    private int idPelanggan;
+    private String idPelanggan;
 
-    public int getIdPelanggan() {
+    public Pelanggan(String idPelanggan, String nama, String alamat) {
+        this.idPelanggan = idPelanggan;
+        this.setNama(nama);
+        this.setAlamat(alamat);
+    }
+
+    public String getIdPelanggan() {
         return idPelanggan;
     }
 
-    public void setIdPelanggan(int idPelanggan) {
+    public void setIdPelanggan(String idPelanggan) {
         this.idPelanggan = idPelanggan;
     }
     
@@ -38,5 +44,13 @@ public class Pelanggan extends Orang {
     @Override
     public void setAlamat(String alamat) {
         super.setAlamat(alamat);
+    }
+    
+    @Override
+    public String toString(){
+        String x = "     ID     : " + this.idPelanggan +
+                 "\n     Nama   : " + this.getNama() +
+                 "\n     Alamat     "+this.getAlamat();
+        return x;
     }
 }

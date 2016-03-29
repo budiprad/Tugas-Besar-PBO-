@@ -16,15 +16,28 @@ import java.util.Map;
  * @author Budi Pradnyana
  */
 public class Perjalanan {
+    int nomorperjalanan;
     PaketWisata paket;
-    private Date tanggal;
-    Map<Integer,Pelanggan> pelanggan = new HashMap<Integer,Pelanggan>();
+    private String tanggal;
+    Map<String,Pelanggan> pelanggan = new HashMap<String,Pelanggan>();
 
-    public Date getTanggal() {
+    public int getNomorperjalanan() {
+        return nomorperjalanan;
+    }
+
+    public void setNomorperjalanan(int nomorperjalanan) {
+        this.nomorperjalanan = nomorperjalanan;
+    }
+
+    public int jumlahPelanggan(){
+        return this.pelanggan.size();
+    }
+    
+    public String getTanggal() {
         return tanggal;
     }
 
-    public void setTanggal(Date tanggal) {
+    public void setTanggal(String tanggal) {
         this.tanggal = tanggal;
     }
     
@@ -40,8 +53,13 @@ public class Perjalanan {
         pelanggan.put(p.getIdPelanggan(), p);
     }
     
-    public Map<Integer,Pelanggan> getPelanggan(){
+    public Map<String,Pelanggan> getPelanggan(){
         return pelanggan;
+    }
+    
+    public ArrayList<Pelanggan> getListPelanggan(){
+        ArrayList<Pelanggan> arr = new ArrayList<Pelanggan>(pelanggan.values());
+        return arr;
     }
     
     public  Pelanggan getPelangganByIndex(int i){
@@ -51,6 +69,16 @@ public class Perjalanan {
     
     public Pelanggan getPelangganById(int idpel){
         return pelanggan.get(idpel);
+    }
+    
+        @Override
+    public String toString(){
+        String x = "Nomor Perjalanan    : " + this.nomorperjalanan +
+                   "\nTanggal           : " + this.tanggal +
+                   "\nPaket Wisata      : " + this.paket.getNamaPaket() + 
+                   "\nHarga             : " + this.paket.getHarga()+
+                   "\nPelanggan         : " + this.getListPelanggan() +"\n" ;
+        return x;
     }
     
 }

@@ -9,13 +9,9 @@ package tubespbo2016;
  *
  * @author Budi Pradnyana
  */
-public class TubesPBO2016 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Driver {
     public static void main(String[] args) {
-        // TODO code application logic here
+        Aplikasi biro = new Aplikasi();
+        biro.mainMenu();
     }
-    
 }
